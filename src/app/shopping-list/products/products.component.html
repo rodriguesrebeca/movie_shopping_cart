@@ -1,0 +1,33 @@
+<br>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]= "movieItem.img" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <br>
+        <strong><h5 class="card-title">{{ movieItem.name }}</h5></strong>
+        <h6 class="card-title">{{ movieItem.director }}</h6>
+        <p class="card-text">{{ movieItem.text }}.</p>
+        <div class="card-body"> <strong><p class="card-text"><small class="text-muted">{{ movieItem.price | currency:"R$"}}</small></p></strong>
+        <div class="btn-group">
+            <button *ngIf="!inCart" type="button" class="btn btn-sm btn-outline-dark" (click)="addToCart()">Alugar</button>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="card shadow-sm">
+      <img class="bd-placeholder-img card-img-top" width="100%" src="https://ptanime.com/wp-content/uploads/2020/03/a-viagem-de-chihiro-2001-Hayao-miyazaki-filme-anime-classico-imagem.jpg">
+      <div class="card-body">
+        <p class="card-text">">
+         
+          <p class="price">
+              <strong><small class="text-muted">{{ 19 | currency: 'R$'}}</small></strong>
+          </p>  
+        </div>
+      </div>
+</div>
+-->

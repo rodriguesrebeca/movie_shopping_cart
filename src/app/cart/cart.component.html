@@ -1,0 +1,28 @@
+<br>
+<br>
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <ul class="list-group list-group-flush">
+                <li  class="list-group-item" *ngFor="let item of cartItems">
+                    <app-cartproduct [cartItems] = "item" ></app-cartproduct>
+                </li>
+                <li class="list-group-item">
+                    <strong>Total: {{ cartTotal | currency: "R$"}}</strong>
+                </li>
+            </ul>
+            <button class="btn btn-dark" type="button" (click) = "clear()">Esvaziar Carrinho</button>
+        
+        <div *ngIf = "cartItems.length > 0 ">
+            <br>
+            <div class="alert alert-dark" role="alert">
+                Para finalizar sua compra, faça seu cadastro nos campos ao lado! :)
+            </div>
+        </div>  
+        </div>
+        <div class="col">
+            <app-cart-form></app-cart-form>
+        </div>
+    </div>
+</div>
